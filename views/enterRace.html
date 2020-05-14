@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>The Materialize Selects Example</title>
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1">      
+    <link rel = "stylesheet"
+       href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel = "stylesheet"
+       href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <script type = "text/javascript"
+       src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+    </script> 
+    
+    <script>
+       $(document).ready(function() {
+          $('select').material_select();
+       });
+    </script>
+</head>
+
+<body>
+
+    <h1>Enter New Run</h1>
+    
+    
+    <div class="row">
+        <div class="input-field col s6">
+          <input value="" id="first_name2" type="text" class="validate">
+          <label class="active" for="first_name2">Name</label>
+        </div>
+      </div>
+        
+      <div class="row">
+        <div class="input-field col s6">
+          <input value="" id="first_name2" type="text" class="validate">
+          <label class="active" for="first_name2">Total Distance</label>
+        </div>
+      </div>
+        
+      <div class="row">
+        <div class="input-field col s6">
+          <input value="" id="first_name2" type="text" class="validate">
+          <label class="active" for="first_name2">Total Time</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s6">
+            <select>
+              <optgroup label="team 1">
+                <option value="1">Phoenix</option>
+                <option value="2">Prescott</option>
+                <option value="2">Tucson</option>
+              </optgroup>
+              <optgroup label="team 2">
+                <option value="1">Phoenix</option>
+                <option value="2">Prescott</option>
+                <option value="2">Tucson</option>
+              </optgroup>
+            </select>
+            <label>Location</label>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s6">
+                <select multiple>
+                  <option value="" disabled selected>Choose your Friend/Team</option>
+                  <option value="1">Friend 1</option>
+                  <option value="2">Friend 2</option>
+                  <option value="3">Team 1</option>
+                  <option value="4">Team 2</option>
+                </select>
+                <label>Add Friend/Team to Run(optional)</label>
+              </div>
+
+
+
+
+
+
+
+      </div>
+      
+            
+      
+                
+
+
+                
+          
+          
+        </form>
+      </div>
+
+      
+
+
+      
+      
+    </body>
+</html>
