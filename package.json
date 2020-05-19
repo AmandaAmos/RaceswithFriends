@@ -4,7 +4,8 @@
   "description": "an running app comparing running times within a group and individually.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,14 @@
   "bugs": {
     "url": "https://github.com/AmandaAmos/RaceswithFriends/issues"
   },
-  "homepage": "https://github.com/AmandaAmos/RaceswithFriends#readme"
+  "homepage": "https://github.com/AmandaAmos/RaceswithFriends#readme",
+  "dependencies": {
+    "exphbs": "^1.2.0",
+    "expres": "0.0.5",
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.21.9"
+  }
 }
