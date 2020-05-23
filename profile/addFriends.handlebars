@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Friend</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="javascript" href="profile.js">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<header id="addfriendsheader">
+    <h3>Races with Friends</h3>
+    <h1><strong>Add Friends</strong></h1>
+</header>
+
+<body>
+    <hr>
+
+    <div class="container" id="addfriendsbody">
+
+        <ul>
+            {{#each user}}
+            <li>
+                <h5>First Name: {{first_name}}</h5>
+                <h5>Last Name: {{last_name}}</h5>
+            </li>
+            {{/each}}
+        </ul>
+        <hr>
+        <ul>
+            {{#each groups}}
+            <li>
+                <h5>Group Name: {{groups_name}}</h5>
+            </li>
+            {{/each}}
+        </ul>
+        <form action="/" method="POST">
+            <textarea type="text" name="add_friends"></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <!---<div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="first_name" type="text" class="validate">
+                        <label for="first_name">First Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="last_name" type="text" class="validate">
+                        <label for="last_name">Last Name</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div>
+            <h4>Add to your groups</h4>
+        </div>
+        <div class="input-field col s12" id="addtoGroups">
+            <select multiple>
+                <option value="" disabled selected>Add to your Groups!</option>
+                <option value="1"></option>
+                <option value="2"></option>
+                <option value="3"></option>
+            </select>
+            <label>Add to Group</label>
+        </div>--->
+
+    </div>
+</body>
