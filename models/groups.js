@@ -24,6 +24,6 @@ module.exports = function (sequelize, DataTypes) {
 
     Group.associate = function(models){
       //each group has many users
-      models.Group.hasMany(models.User, );
+      models.Group.hasMany(models.User);
     }
 }
