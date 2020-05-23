@@ -1,4 +1,29 @@
 {
+<<<<<<< HEAD
+    "development": {
+      "username": "root",
+      "password": "pepe6969",
+      "database": "project2_db",
+      "host": "127.0.0.1",
+      "port": 3306,
+      "dialect": "mysql"
+    },
+    "test": {
+      "username": "root",
+      "password": null,
+      "database": "project2_db",
+      "host": "127.0.0.1",
+      "dialect": "mysql"
+    },
+    "production": {
+      "username": "root",
+      "password": null,
+      "database": "project2_db",
+      "host": "127.0.0.1",
+      "dialect": "mysql"
+    }
+}
+=======
   "development": {
     "username": "root",
     "password": null,
@@ -24,3 +49,4 @@
     "operatorsAliases": false
   }
 }
+>>>>>>> b8a7bcf880f001d871086d2df89299d77455b614
