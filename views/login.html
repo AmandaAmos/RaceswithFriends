@@ -40,13 +40,21 @@
                     <i class="material-icons right">send</i>
                 </button>
                 <div class="card-action">
+                    <p>Don't have an account?</p>
                     <a href="#">Signup</a>
                 </div>
 
             </div>
         </div>
     </div>
-
+<script>
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // ...
+});
+</script>
 </body>
 
 </html>
