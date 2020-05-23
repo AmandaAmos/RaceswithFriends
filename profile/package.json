@@ -1,0 +1,20 @@
+{
+  "name": "RaceswithFriends",
+  "version": "1.0.0",
+  "description": "an running app comparing running times within a group and individually.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AmandaAmos/RaceswithFriends.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AmandaAmos/RaceswithFriends/issues"
+  },
+  "homepage": "https://github.com/AmandaAmos/RaceswithFriends#readme"
+}
