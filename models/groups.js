@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-    var Group = sequalize.define("Group", {
+    var Group = sequelize.define("Group", {
         groupId: {
           type: DataTypes.INTEGER,
           PrimaryKey: true,
