@@ -135,7 +135,7 @@ module.exports = function(app) {
    })
 
     // route used to create new group
-    app.create("/api/group", function(req,res){
+    app.post("/api/group", function(req,res){
         db.Group.create(req.body).then(function(groupData){
             db.GroupId.create({
                 groupId: groupData.id
