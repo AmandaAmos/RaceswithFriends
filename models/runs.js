@@ -1,12 +1,7 @@
 module.exports = function (sequelize, DataTypes) {
     var Run = sequelize.define("Run", {
-        runId: {
-            type: DataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true
-        },
         distance: {
-        type: DataTypes.float,
+        type: DataTypes.FLOAT,
         allowNull: false,
         validate: {
             len: [1]
@@ -27,4 +22,6 @@ module.exports = function (sequelize, DataTypes) {
         models.Run.belongsTo(models.User, { as: "host"});
 
     }
+
+    return Run;
 }
