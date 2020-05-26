@@ -8,7 +8,7 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
         distance: {
-        type: DataTypes.float,
+        type: DataTypes.FLOAT,
         allowNull: false,
         validate: {
             len: [1]
