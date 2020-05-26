@@ -15,8 +15,6 @@ app.set("view engine", "handlebars");
 
 require("./routes/api-routes")(app);
 
-app.use(routes);
-
 app.listen(PORT, function () {
     console.log("Listening on port:%s", PORT);
 });

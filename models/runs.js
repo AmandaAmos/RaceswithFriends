@@ -1,12 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
     var Run = sequelize.define("Run", {
-        name:{
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [1]
-            }
-        },
         distance: {
         type: DataTypes.FLOAT,
         allowNull: false,
