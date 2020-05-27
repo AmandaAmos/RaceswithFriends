@@ -1,3 +1,4 @@
+  
 var express = require("express");
 
 var PORT = process.env.PORT || 8000;
@@ -14,6 +15,7 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 require("./routes/api-routes")(app);
+require("./routes/html-routes")(app);
 
 app.listen(PORT, function () {
     console.log("Listening on port:%s", PORT);
