@@ -9,8 +9,16 @@
   }
 
   #DBsidebar {
-      padding:25px;
+    padding: 25px;
   }
-button{
+
+  button {
     float: right;
-}
+  }
+
+  #featureFooter {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }

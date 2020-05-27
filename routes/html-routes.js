@@ -13,6 +13,9 @@ module.exports = function (app) {
     app.get("/enterrace", function(req,res) {
         res.sendFile(path.join(__dirname,"../public/views/enterRace.html"))
     })
+    app.get("/comingsoon", function(req,res) {
+        res.sendFile(path.join(__dirname,"../public/views/comingSoon.html"))
+     })
     app.get("*", function(req,res) {
        res.sendFile(path.join(__dirname,"../public/views/login.html"))
     })
