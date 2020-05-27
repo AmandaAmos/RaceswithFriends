@@ -65,12 +65,13 @@
 
         document.getElementById("signUpBtn").onclick = function () {
             firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
+
                 var email = document.getElementById("email").value
                 var password = document.getElementById("password").value
                 // Handle Errors here.
                 var errorCode = error.code;
                 var errorMessage = error.message;
-                // ...
+                // ... 
             });
         };
     </script>
