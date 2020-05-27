@@ -1,19 +1,20 @@
-var path = require("path");
+var path = require("path"); 
+
 module.exports = function (app) {
     app.get("/main", function(req,res) {
-        res.sendFile("/views/login.html", { root: path.join(__dirname, "../public") })
+        res.sendFile(path.join(__dirname,"../public/views/login.html"))
     })
     app.get("/signup", function(req,res) {
-        res.sendFile("/views/signUp.html", { root: path.join(__dirname, "../public") })
+        res.sendFile(path.join(__dirname,"../public/views/signUp.html"))
     })
     app.get("/feature", function(req,res) {
-        res.sendFile("/views/feature.html", { root: path.join(__dirname, "../public") })
+        res.sendFile(path.join(__dirname,"../public/views/feature.html"))
     })
     app.get("/enterrace", function(req,res) {
-        res.sendFile("/views/enterRace.html", { root: path.join(__dirname, "../public") })
+        res.sendFile(path.join(__dirname,"../public/views/enterRace.html"))
     })
     app.get("*", function(req,res) {
-        res.sendFile("/views/index.html", { root: path.join(__dirname, "../public") })
+       res.sendFile(path.join(__dirname,"../public/views/login.html"))
     })
 
 }
