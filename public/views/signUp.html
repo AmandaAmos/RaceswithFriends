@@ -64,16 +64,28 @@
         firebase.initializeApp(firebaseConfig);
 
         document.getElementById("signUpBtn").onclick = function () {
-            firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            console.log(email + password);
 
-                var email = document.getElementById("email").value
-                var password = document.getElementById("password").value
+            firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
                 // Handle Errors here.
                 var errorCode = error.code;
                 var errorMessage = error.message;
                 // ... 
-            });
+            })
+
+            firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                // User is signed in.
+                window.location.href = "/feature"
+            } else {
+                // No user is signed in.
+            }
+        });
         };
+        
+
     </script>
 </body>
 
