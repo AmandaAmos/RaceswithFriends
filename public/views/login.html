@@ -7,20 +7,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
-    <title>Document</title>
-    <script>
-        var firebaseConfig = {
-            apiKey: "AIzaSyDk8iQZTGOa8typTqY7TGeSryQ-OvfhhJc",
-            authDomain: "raceswithfriends.firebaseapp.com",
-            databaseURL: "https://raceswithfriends.firebaseio.com",
-            projectId: "raceswithfriends",
-            storageBucket: "raceswithfriends.appspot.com",
-            messagingSenderId: "545689556224",
-            appId: "1:545689556224:web:eb11f9ab50cae05b27cfe5"
-        };
+    <title>Running</title>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-auth.js"></script>
 
-        firebase.initializeApp(firebaseConfig);
-    </script>
+
 </head>
 
 <body>
@@ -36,27 +28,57 @@
                         <p>Password: </p>
                         <input type="text" id="password">
                     </div>
-                    <button onClick="location.href='feature.html'" class="btn waves-effect waves-light" id="signIn"
-                        type="submit" name="action">Submit
+                    <button class="btn waves-effect waves-light" id="signIn" type="submit" name="action">Submit
                         <i class="material-icons right">send</i>
                     </button>
                     <div class="card-action">
                         <p>Don't have an account?</p>
-                        <a href="./signUp.html">Signup</a>
+                        <a href="/signup">Signup</a>
                     </div>
 
                 </div>
             </div>
         </div>
     </div>
-    
+
+
     <script>
-        firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            // ...
+
+        var firebaseConfig = {
+            apiKey: "AIzaSyDk8iQZTGOa8typTqY7TGeSryQ-OvfhhJc",
+            authDomain: "raceswithfriends.firebaseapp.com",
+            databaseURL: "https://raceswithfriends.firebaseio.com",
+            projectId: "raceswithfriends",
+            storageBucket: "raceswithfriends.appspot.com",
+            messagingSenderId: "545689556224",
+            appId: "1:545689556224:web:eb11f9ab50cae05b27cfe5"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+
+
+        document.getElementById("signIn").onclick = function () {
+
+            var email = document.getElementById("email").value
+            var password = document.getElementById("password").value
+
+            firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                // ...
+            })
+        };
+
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                // User is signed in.
+                window.location.href = "/feature"
+            } else {
+                // No user is signed in.
+            }
         });
+
     </script>
 </body>
 
