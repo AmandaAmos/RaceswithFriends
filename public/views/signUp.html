@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
-    <title>Document</title>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-auth.js"></script>
+    <title>Running With Friends</title>
 
 </head>
 
@@ -32,24 +35,8 @@
                         <input type="text" id="name">
 
                         <br>
-                        <br>
 
-                        <ul id="age" class="dropdown-content">
-                            <li>10-20</li>
-                            <li class="divider"></li>
-                            <li>20-30</li>
-                            <li class="divider"></li>
-                            <li>30-40</li>
-                            <li class="divider"></li>
-                            <li>40+</li>
-                        </ul>
-                        <a class="dropdown-trigger" href="#!" data-target="dropdown1">Age<i
-                                class="material-icons right">arrow_drop_down</i></a>
-
-                        <br>
-                        <br>
-
-                        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                        <button class="btn waves-effect waves-light" type="submit" name="action" id="signUpBtn">Submit
                             <i class="material-icons right">send</i>
                         </button>
 
@@ -76,14 +63,16 @@
 
         firebase.initializeApp(firebaseConfig);
 
-        firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
-            var email = document.getElementById("email").value
-            var password = document.getElementById("password").value
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            // ...
-        });
+        document.getElementById("signUpBtn").onclick = function () {
+            firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
+                var email = document.getElementById("email").value
+                var password = document.getElementById("password").value
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                // ...
+            });
+        };
     </script>
 </body>
 
