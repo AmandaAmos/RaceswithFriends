@@ -8,19 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <title>Document</title>
-    <script>
-        var firebaseConfig = {
-            apiKey: "AIzaSyDk8iQZTGOa8typTqY7TGeSryQ-OvfhhJc",
-            authDomain: "raceswithfriends.firebaseapp.com",
-            databaseURL: "https://raceswithfriends.firebaseio.com",
-            projectId: "raceswithfriends",
-            storageBucket: "raceswithfriends.appspot.com",
-            messagingSenderId: "545689556224",
-            appId: "1:545689556224:web:eb11f9ab50cae05b27cfe5"
-        };
 
-        firebase.initializeApp(firebaseConfig);
-    </script>
 </head>
 
 <body>
@@ -32,15 +20,13 @@
             <div class="col s12 m6">
                 <div class="card blue-grey darken-1">
                     <div class="card-content white-text" id=signUp>
+
                         <span class="card-title">Signup</span>
                         <p>Email: </p>
                         <input type="email" id="email">
 
                         <p>Password: </p>
                         <input type="text" id="password">
-
-                        <p>Re-Enter Password: </p>
-                        <input type="text" id="password2">
 
                         <p>Name: </p>
                         <input type="text" id="name">
@@ -63,22 +49,36 @@
                         <br>
                         <br>
 
-                        <button onClick="location.href='feature.html'" class="btn waves-effect waves-light"
-                            type="submit" name="action">Submit
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
                             <i class="material-icons right">send</i>
                         </button>
 
                     </div>
                     <div class="card-action">
                         <p>Already have an account</p>
-                        <a href="#">Login</a>
+                        <a href="/main">Login</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <script>
+
+        var firebaseConfig = {
+            apiKey: "AIzaSyDk8iQZTGOa8typTqY7TGeSryQ-OvfhhJc",
+            authDomain: "raceswithfriends.firebaseapp.com",
+            databaseURL: "https://raceswithfriends.firebaseio.com",
+            projectId: "raceswithfriends",
+            storageBucket: "raceswithfriends.appspot.com",
+            messagingSenderId: "545689556224",
+            appId: "1:545689556224:web:eb11f9ab50cae05b27cfe5"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+
         firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
+            var email = document.getElementById("email").value
+            var password = document.getElementById("password").value
             // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
