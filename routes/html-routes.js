@@ -1,4 +1,5 @@
-module.exports = function (app,path) {
+var path = require("path");
+module.exports = function (app) {
     app.get("/main", function(req,res) {
         res.sendFile("/views/login.html", { root: path.join(__dirname, "../public") })
     })
