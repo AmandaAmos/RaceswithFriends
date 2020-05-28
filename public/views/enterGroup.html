@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Add a New Group</title>
+  <meta name="viewport" content="width = device-width, initial-scale = 1">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+  <link rel="stylesheet" href="./style.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+  </script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $('select').material_select();
+    });
+  </script>
+</head>
+
+<body>
+
+  <!-- Navigation Bar-->
+  <nav>
+    <div class="container">
+        <div class="nav-wrapper">
+            <a href="/index" class="brand-logo">Races With Friends</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/index">Home</a></li>
+                <li><a href="/comingsoon">Profile</a></li>
+            </ul>
+        </div>
+</nav>
+
+  <div class="container">
+    <h1>Enter New Group</h1>
+
+
+    <div class="row">
+      <div class="input-field col s6">
+        <input value="" id="name" type="text" class="validate">
+        <label class="active" for="name">Name</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s6">
+        <input value="" id="friends" type="text" class="validate">
+        <label class="active" for="friends">Enter Friends</label>
+      </div>
+    </div>
+
+      <br>
+      <br>
+      <div class="row">
+        <button class="btn waves-effect waves-light" type="submit" name="action" id="groupSubmit">Submit
+          <i class="material-icons right">send</i>
+        </button>
+      </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- getting spacing right for stinky footer -->
+  <div class = "row">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
+
+  <!-- footer content -->
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <p class="grey-text text-lighten-4">Super important and informational racing tidbits.</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="enterRace.html">Add New Run</a></li>
+            <li><a class="grey-text text-lighten-3" href="enterGroup.html">Create New Friend Group</a></li>
+            <li><a class="grey-text text-lighten-3" href="https://github.com/AmandaAmos/RaceswithFriends">Git Repo</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+</body>
+<script>
+var createGroup = function(data){
+    return $.ajax({
+      url: "/api/group/",
+      type: "POST",
+      data: data
+    })
+}
+
+$(document).on("click", "#runSubmit", function(event) {
+  event.preventDefault()
+  var gName = $("#name").val().trim();
+  var gFriends = $("#friends").val().trim();
+  if (gName.length < 1) {
+    $("#name").focus();
+  } else if (gFriends.length < 1) {
+    $("#friends").focus();
+  } else {
+    var data = {
+      name: gName,
+      participants: gFriends
+    }
+    createRun(data)
+  }
+})
+  
+</script> 
+</html>

@@ -27,9 +27,9 @@
   <nav>
     <div class="container">
         <div class="nav-wrapper">
-            <a href="/feature" class="brand-logo">Races With Friends</a>
+            <a href="/index" class="brand-logo">Races With Friends</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/feature">Home</a></li>
+                <li><a href="/index">Home</a></li>
                 <li><a href="/comingsoon">Profile</a></li>
             </ul>
         </div>
@@ -41,22 +41,22 @@
 
     <div class="row">
       <div class="input-field col s6">
-        <input value="" id="firstName" type="text" class="validate">
-        <label class="active" for="firstName">Name</label>
+        <input value="" id="date" type="text" class="validate">
+        <label class="active" for="date">Date(mm/dd/yy)</label>
       </div>
     </div>
 
     <div class="row">
       <div class="input-field col s6">
         <input value="" id="distance" type="text" class="validate">
-        <label class="active" for="firstName">Total Distance</label>
+        <label class="active" for="distance">Total Distance</label>
       </div>
     </div>
 
     <div class="row">
       <div class="input-field col s6">
         <input value="" id="time" type="text" class="validate">
-        <label class="active" for="firstName">Total Time</label>
+        <label class="active" for="time">Total Time</label>
       </div>
     </div>
 
@@ -118,8 +118,8 @@
         </div>
         <div class="col l4 offset-l2 s12">
           <ul>
-            <li><a class="grey-text text-lighten-3" href="/enterrace">Add New Run</a></li>
-            <li><a class="grey-text text-lighten-3" href="/comingsoon">Create New Friend Group</a></li>
+            <li><a class="grey-text text-lighten-3" href="enterRace.html">Add New Run</a></li>
+            <li><a class="grey-text text-lighten-3" href="enterGroup.html">Create New Friend Group</a></li>
             <li><a class="grey-text text-lighten-3" href="https://github.com/AmandaAmos/RaceswithFriends">Git Repo</a>
             </li>
           </ul>
@@ -130,5 +130,35 @@
   </footer>
 
 </body>
+<script>
+var createRun = function(data){
+    return $.ajax({
+      url: "/api/run/",
+      type: "POST",
+      data: data
+    })
+}
 
+$(document).on("click", "#runSubmit", function(event) {
+  event.preventDefault()
+  var runDate = $("#date").val().trim();
+  var runDistance = $("#distance").val().trim();
+  var runTime = $("#time").val().trim();
+  if (runDate.length < 1) {
+    $("#date").focus();
+  } else if (runDistance.length < 1) {
+    $("#distance").focus();
+  } else if (runTime.length < 1) {
+    $("#time").focus();
+  } else {
+    var data = {
+      date: runDate,
+      distance: runDistance,
+      time: runTime
+    }
+    createRun(data)
+  }
+})
+  
+</script> 
 </html>
