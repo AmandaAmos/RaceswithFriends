@@ -25,15 +25,17 @@
 
   <!-- Navigation Bar-->
   <nav>
-    <div class="container">
+    <nav class="red accent-4">
+      <div class="container">
         <div class="nav-wrapper">
-            <a href="/index" class="brand-logo">Races With Friends</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/index">Home</a></li>
-                <li><a href="/comingsoon">Profile</a></li>
-            </ul>
+          <a href="/index" class="brand-logo">Races With Friends</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/index">Home</a></li>
+            <li><a href="/comingsoon">Profile</a></li>
+          </ul>
         </div>
-</nav>
+    </nav>
+  </nav>
 
   <div class="container">
     <h1>Enter New Run</h1>
@@ -77,7 +79,7 @@
         <label>Location - Coming Soon</label>
       </div>
 
-       <div class="row">
+      <div class="row">
         <!-- <div class="input-field col s6">
           <select multiple>
             <option value="" disabled selected>Choose your Friend/Team</option>
@@ -101,7 +103,7 @@
   </div>
 
   <!-- getting spacing right for stinky footer -->
-  <div class = "row">
+  <div class="row">
     <br>
     <br>
     <br>
@@ -110,16 +112,19 @@
   </div>
 
   <!-- footer content -->
-  <footer class="page-footer">
+  <!-- footer content -->
+  <footer class="page-footer" style="background-color: #d50000;">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <p class="grey-text text-lighten-4">Super important and informational racing tidbits.</p>
+          <a href="https://www.runtastic.com/blog/en/tips-on-how-to-increase-running-stamina/">
+            <p class="grey-text text-lighten-4">Endurance running.</p>
+          </a>
         </div>
         <div class="col l4 offset-l2 s12">
           <ul>
             <li><a class="grey-text text-lighten-3" href="enterRace.html">Add New Run</a></li>
-            <li><a class="grey-text text-lighten-3" href="enterGroup.html">Create New Friend Group</a></li>
+            <li><a class="grey-text text-lighten-3" href="comingSoon.html">Create New Friend Group</a></li>
             <li><a class="grey-text text-lighten-3" href="https://github.com/AmandaAmos/RaceswithFriends">Git Repo</a>
             </li>
           </ul>
@@ -128,37 +133,36 @@
     </div>
 
   </footer>
-
 </body>
 <script>
-var createRun = function(data){
+  var createRun = function (data) {
     return $.ajax({
       url: "/api/run/",
       type: "POST",
       data: data
     })
-}
-
-$(document).on("click", "#runSubmit", function(event) {
-  event.preventDefault()
-  var runDate = $("#date").val().trim();
-  var runDistance = $("#distance").val().trim();
-  var runTime = $("#time").val().trim();
-  if (runDate.length < 1) {
-    $("#date").focus();
-  } else if (runDistance.length < 1) {
-    $("#distance").focus();
-  } else if (runTime.length < 1) {
-    $("#time").focus();
-  } else {
-    var data = {
-      date: runDate,
-      distance: runDistance,
-      time: runTime
-    }
-    createRun(data);
   }
-})
-  
-</script> 
+
+  $(document).on("click", "#runSubmit", function (event) {
+    event.preventDefault()
+    var runDate = $("#date").val().trim();
+    var runDistance = $("#distance").val().trim();
+    var runTime = $("#time").val().trim();
+    if (runDate.length < 1) {
+      $("#date").focus();
+    } else if (runDistance.length < 1) {
+      $("#distance").focus();
+    } else if (runTime.length < 1) {
+      $("#time").focus();
+    } else {
+      var data = {
+        date: runDate,
+        distance: runDistance,
+        time: runTime
+      }
+      createRun(data);
+    }
+  })
+</script>
+
 </html>
