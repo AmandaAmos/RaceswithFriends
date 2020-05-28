@@ -25,6 +25,7 @@
 
   <!-- Navigation Bar-->
   <nav>
+    <nav class="red accent-4">
     <div class="container">
         <div class="nav-wrapper">
             <a href="/index" class="brand-logo">Races With Friends</a>
@@ -33,6 +34,7 @@
                 <li><a href="/comingsoon">Profile</a></li>
             </ul>
         </div>
+      </nav>
 </nav>
 
   <div class="container">
@@ -73,26 +75,28 @@
     <br>
   </div>
 
-  <!-- footer content -->
-  <footer class="page-footer">
+   <!-- footer content -->
+   <footer class="page-footer" style="background-color: #d50000;">
     <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <p class="grey-text text-lighten-4">Super important and informational racing tidbits.</p>
+        <div class="row">
+            <div class="col l6 s12">
+                <a href="https://www.usatf.org/news">
+                    <p class="grey-text text-lighten-4">Running News</p>
+                </a>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="enterRace.html">Add New Run</a></li>
+                    <li><a class="grey-text text-lighten-3" href="comingSoon.html">Create New Friend Group</a></li>
+                    <li><a class="grey-text text-lighten-3"
+                            href="https://github.com/AmandaAmos/RaceswithFriends">Git Repo</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="col l4 offset-l2 s12">
-          <ul>
-            <li><a class="grey-text text-lighten-3" href="enterRace.html">Add New Run</a></li>
-            <li><a class="grey-text text-lighten-3" href="enterGroup.html">Create New Friend Group</a></li>
-            <li><a class="grey-text text-lighten-3" href="https://github.com/AmandaAmos/RaceswithFriends">Git Repo</a>
-            </li>
-          </ul>
-        </div>
-      </div>
     </div>
 
-  </footer>
-
+</footer>
 </body>
 <script>
 var createGroup = function(data){
