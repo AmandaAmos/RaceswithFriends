@@ -7,8 +7,8 @@ module.exports = function (app) {
     app.get("/signup", function(req,res) {
         res.sendFile(path.join(__dirname,"../public/views/signUp.html"))
     })
-    app.get("/feature", function(req,res) {
-        res.sendFile(path.join(__dirname,"../public/views/feature.html"))
+    app.get("/index", function(req,res) {
+        res.sendFile(path.join(__dirname,"../public/views/index.html"))
     })
     app.get("/enterrace", function(req,res) {
         res.sendFile(path.join(__dirname,"../public/views/enterRace.html"))
@@ -19,5 +19,7 @@ module.exports = function (app) {
     app.get("*", function(req,res) {
        res.sendFile(path.join(__dirname,"../public/views/login.html"))
     })
-
+    app.get("newgroup", function(req,res) {
+        res.sendFile(path.join(__dirname,"../public/views/enterGroup.html"))
+     })
 }
