@@ -11,12 +11,30 @@
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-auth.js"></script>
+<<<<<<< HEAD
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+=======
+
+>>>>>>> 1dd4a4c4a3ff88db25633f697d38258161e3a094
 
 </head>
 
 <body>
-
+    <!-- Navigation Bar-->
+    <nav>
+        <nav class="red accent-4">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="/index" class="brand-logo">Races With Friends</a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="/index">Home</a></li>
+                        <li><a href="/comingsoon">Profile</a></li>
+                    </ul>
+                </div>
+        </nav>
+    </nav>
+    <br>
+    <br>
     <div class="container">
         <div class="row">
             <div class="col s12 m6">
@@ -33,17 +51,36 @@
                     </button>
                     <div class="card-action">
                         <p>Don't have an account?</p>
-                        <a href="signup.html">Signup</a>
+                        <a href="/signup">Signup</a>
                     </div>
 
                 </div>
             </div>
         </div>
     </div>
+    <!-- footer content -->
+  <footer class="page-footer" style="background-color: #d50000;">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <a href="https://www.runnersworld.com/training/a20814665/12-habits-to-keep-up-your-running-motivation/">
+            <p class="grey-text text-lighten-4">Stay Motivated</p>
+          </a>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="enterRace.html">Add New Run</a></li>
+            <li><a class="grey-text text-lighten-3" href="comingSoon.html">Create New Friend Group</a></li>
+            <li><a class="grey-text text-lighten-3" href="https://github.com/AmandaAmos/RaceswithFriends">Git Repo</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
+  </footer>
 
     <script>
-
         var firebaseConfig = {
             apiKey: "AIzaSyDk8iQZTGOa8typTqY7TGeSryQ-OvfhhJc",
             authDomain: "raceswithfriends.firebaseapp.com",
@@ -72,35 +109,34 @@
 
             // set user data to send to server
             var user = {
-            email: email,
-            password: password,
+                email: email,
+                password: password,
             }
             // make a PUT request to server for validating user credentials
             $.ajax({
-            url: "/api/user",
-            type: "PUT",
-            data: user,
-            }).then(function(conf) {
-            if (conf) {
-                console.log("logged in")
-                window.localStorage.setItem("user", conf)
-            } else {
-                // server validation failed, so do the following
-                console.log("login failed")
-                $("#password").val("").focus();
-            }
+                url: "/api/user",
+                type: "PUT",
+                data: user,
+            }).then(function (conf) {
+                if (conf) {
+                    console.log("logged in")
+                    window.localStorage.setItem("user", conf)
+                } else {
+                    // server validation failed, so do the following
+                    console.log("login failed")
+                    $("#password").val("").focus();
+                }
             })
         };
 
         firebase.auth().onAuthStateChanged(function (user) {
             if (user) {
                 // User is signed in.
-                window.location.href = "index.html"
+                window.location.href = "/feature"
             } else {
                 // No user is signed in.
             }
         });
-
     </script>
 </body>
 
