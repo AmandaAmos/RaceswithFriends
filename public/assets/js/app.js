@@ -70,24 +70,9 @@ var renderSideNav = function(user){
     })
 }
 
-var newUser = function(user){
-
-}
-
 var getParticipants = function(userId){
     return $.ajax({
       url: "/api/user/" + userId + "/group",
       type: "GET"
     })
 }
-
-var createGroup = function(data){
-    return $.ajax({
-      url: "/api/group/",
-      type: "POST",
-      data: data
-    })
-}
-
-
-
