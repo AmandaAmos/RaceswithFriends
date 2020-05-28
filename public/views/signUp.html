@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-auth.js"></script>
@@ -51,6 +52,14 @@
     </div>
     <script>
 
+        var createUser = function(data){
+            return $.ajax({
+                url: "/api/user",
+                type: "POST",
+                data: data
+            })
+        }
+
         var firebaseConfig = {
             apiKey: "AIzaSyDk8iQZTGOa8typTqY7TGeSryQ-OvfhhJc",
             authDomain: "raceswithfriends.firebaseapp.com",
@@ -77,16 +86,31 @@
 
             firebase.auth().onAuthStateChanged(function (user) {
             if (user) {
+
+                var name = $("#name").val().trim();
+                var data = {
+                    name: name,
+                    email: email,
+                    password: password
+                }
+                createUser(data).then(function() {
+                })
+                
+
                 // User is signed in.
-                window.location.href = "/feature"
+                window.location.href = "/index"
             } else {
                 // No user is signed in.
             }
+
+            
+                
+            
         });
         };
         
 
     </script>
 </body>
-
+<script src="js/app.js"></script>
 </html>

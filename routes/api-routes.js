@@ -151,6 +151,17 @@ module.exports = function(app) {
         })
     })
 
+    // route used to create a new run
+    app.post("/api/run", function(req,res){
+        db.Run.create(req.body)
+            .then(function(run){
+                res.json(run.id);
+            }).catch(function(err){
+                console.log(err);
+                res.send(false);
+            })
+    })
+
     // route used to delete a run
     app.delete("/api/run/:id", function(req,res){
         db.Run.destroy({

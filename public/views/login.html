@@ -11,7 +11,7 @@
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-auth.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 </head>
 
@@ -67,13 +67,35 @@
                 var errorCode = error.code;
                 var errorMessage = error.message;
                 console.log(errorCode + " " + errorMessage)
+                document.getElementById("password").val("")
+            })
+
+            // set user data to send to server
+            var user = {
+            email: email,
+            password: password,
+            }
+            // make a PUT request to server for validating user credentials
+            $.ajax({
+            url: "/api/user",
+            type: "PUT",
+            data: user,
+            }).then(function(conf) {
+            if (conf) {
+                console.log("logged in")
+                window.localStorage.setItem("user", conf)
+            } else {
+                // server validation failed, so do the following
+                console.log("login failed")
+                $("#password").val("").focus();
+            }
             })
         };
 
         firebase.auth().onAuthStateChanged(function (user) {
             if (user) {
                 // User is signed in.
-                window.location.href = "/feature"
+                window.location.href = "/index"
             } else {
                 // No user is signed in.
             }
