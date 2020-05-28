@@ -9,7 +9,7 @@ module.exports = function (sequelize, DataTypes) {
           },
           //somehow allow the creator to add particpants to the group
         participants: {
-            type: DataTypes.ARRAY(DataTypes.User),
+            type: DataTypes.ARRAY(DataTypes.STRING),
             validate: {
               len: [1]
             }

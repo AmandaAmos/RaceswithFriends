@@ -94,11 +94,17 @@
                     password: password
                 }
                 createUser(data).then(function() {
+                    return $.ajax({
+                    url: "/api/user/",
+                    type: "POST",
+                    data: data
+                    })
                 })
                 
+                createUser(data);
 
                 // User is signed in.
-                window.location.href = "/index"
+                window.location.href = "index.html"
             } else {
                 // No user is signed in.
             }
@@ -112,5 +118,4 @@
 
     </script>
 </body>
-<script src="js/app.js"></script>
 </html>
