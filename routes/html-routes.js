@@ -19,7 +19,7 @@ module.exports = function (app) {
     app.get("*", function(req,res) {
        res.sendFile(path.join(__dirname,"../public/views/login.html"))
     })
-    app.get("newgroup", function(req,res) {
+    app.get("/newgroup", function(req,res) {
         res.sendFile(path.join(__dirname,"../public/views/enterGroup.html"))
      })
 }
