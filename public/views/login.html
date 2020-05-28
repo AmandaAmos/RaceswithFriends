@@ -11,7 +11,11 @@
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-auth.js"></script>
+<<<<<<< HEAD
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+=======
+
+>>>>>>> 1dd4a4c4a3ff88db25633f697d38258161e3a094
 
 </head>
 
@@ -47,7 +51,7 @@
                     </button>
                     <div class="card-action">
                         <p>Don't have an account?</p>
-                        <a href="signup.html">Signup</a>
+                        <a href="/signup">Signup</a>
                     </div>
 
                 </div>
@@ -55,27 +59,26 @@
         </div>
     </div>
     <!-- footer content -->
-    <footer class="page-footer" style="background-color: #d50000;">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <a href="https://www.usatf.org/news">
-                        <p class="grey-text text-lighten-4">Running News</p>
-                    </a>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                    <ul>
-                        <li><a class="grey-text text-lighten-3" href="enterRace.html">Add New Run</a></li>
-                        <li><a class="grey-text text-lighten-3" href="comingSoon.html">Create New Friend Group</a></li>
-                        <li><a class="grey-text text-lighten-3"
-                                href="https://github.com/AmandaAmos/RaceswithFriends">Git Repo</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+  <footer class="page-footer" style="background-color: #d50000;">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <a href="https://www.runnersworld.com/training/a20814665/12-habits-to-keep-up-your-running-motivation/">
+            <p class="grey-text text-lighten-4">Stay Motivated</p>
+          </a>
         </div>
+        <div class="col l4 offset-l2 s12">
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="enterRace.html">Add New Run</a></li>
+            <li><a class="grey-text text-lighten-3" href="comingSoon.html">Create New Friend Group</a></li>
+            <li><a class="grey-text text-lighten-3" href="https://github.com/AmandaAmos/RaceswithFriends">Git Repo</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-    </footer>
+  </footer>
 
     <script>
         var firebaseConfig = {
@@ -129,7 +132,7 @@
         firebase.auth().onAuthStateChanged(function (user) {
             if (user) {
                 // User is signed in.
-                window.location.href = "index.html"
+                window.location.href = "/feature"
             } else {
                 // No user is signed in.
             }
