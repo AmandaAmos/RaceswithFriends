@@ -33,7 +33,7 @@
                     </button>
                     <div class="card-action">
                         <p>Don't have an account?</p>
-                        <a href="signup.html">Signup</a>
+                        <a href="/signup">Signup</a>
                     </div>
 
                 </div>
@@ -95,7 +95,7 @@
         firebase.auth().onAuthStateChanged(function (user) {
             if (user) {
                 // User is signed in.
-                window.location.href = "index.html"
+                window.location.href = "/index"
             } else {
                 // No user is signed in.
             }
