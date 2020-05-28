@@ -1,7 +1,7 @@
 module.exports = function (sequelize, DataTypes) {
     var Run = sequelize.define("Run", {
         date: {
-            type: DataTypes.STRING,
+            type: DataTypes.DATE,
             allowNull: false,
             validate: {
                 len: [8]
@@ -27,7 +27,6 @@ module.exports = function (sequelize, DataTypes) {
     Run.associate = function(models){
         //Each Run belongs to a User
         models.Run.belongsTo(models.User, { as: "host"});
-
     }
 
     return Run;
