@@ -1,20 +1,33 @@
-# RaceswithFriends
-a running application to connect to friends who run, and form running groups. We aren't reinventing the wheel, we're creating an app utilizing our current skillset around something we find enriching. 
+# **RaceswithFriends**
+a running application to connect to friends who run, and form running groups. We aren't reinventing the wheel, we're creating an app utilizing our current skillset around something we find enriching.
 
-The first time user creates an account -which is authenicated through Firebase.  They can then login for each subsequent use to access their saved runs.  
+The app supports:
+* New Users
+    * Requires an authentic email
+* Logging Runs
+    * Requires a date, distance, and time
+* Making Friend Groups
+    * Requires a name and a list of other users
 
-This app is made using:
-  HTML
-  CSS
-  Materialize
-  MySQL2
-  Sequelize
-  Firebase
-  Heroku
-  Javascript
-  Node
-  
-Grabbing client side input with javascript, ajax calls are used to move the input to the server side.  Ajax also handles the data going to the client side. 
-MySQL stores the database.  And Sequelize is a promise based ORM streamlining data flow.  
+**Functionality**
 
-We chose Materialize because of the range of color and formatting options.  It was an intuitive tool when designing the UI.  
+*Races with Friends* is a social media web application that allows each user to join friend groups and compete among friends while encouraging a healthy lifestyle. The main goal of the app is to keep people active and social during the time of quarentine and isolation. Knowing that there are already applications that achieve a similar goal we wanted to see just how we might solve the same problem in our own way.
+
+This is the login page: ![ screenshot 1](public\assets\images\login.png)
+
+This is the signup page: ![ screenshot 2](public\assets\images\signup.png)
+
+This is the home page: ![ screenshot 3](public\assets\images\indexcapture.JPG)
+
+This is the friendgroup creation page: ![ screenshot 4](public\assets\images\profile.png)
+
+This is the new run page: ![ screenshot 5](public\assets\images\newrun.JPG)
+
+This is the (in progress) profile page: ![ screenshot 6](public\assets\images\profile.png)
+
+**NPM's required**
+* sequelize
+* mysql2
+* path
+* fs
+* express
