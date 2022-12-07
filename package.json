@@ -21,7 +21,7 @@
   "dependencies": {
     "exphbs": "^1.2.0",
     "expres": "0.0.5",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "express-handlebars": "^4.0.4",
     "mysql": "^2.18.1",
     "mysql2": "^2.1.0",
